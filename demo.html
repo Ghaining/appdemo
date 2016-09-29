@@ -7,12 +7,12 @@
 	<style>
 		div{
 			background: red;
-			width: 100px;
-			height: 100px;
+			width: 5rem;
+			height: 5rem;
 			position: absolute;
 			right: 0;
 			top: 50%;
-			margin-top: -50px;
+			margin-top: -2.5px;
 			transition: 1s all linear;
 		}
 
@@ -21,37 +21,45 @@
 <body>
 	<div></div>
 	<script>
+	;(function(){
+        function change(){
+            document.documentElement.style.fontSize=document.documentElement.clientWidth/(320/20)+'px';
+        }
+        window.addEventListener('resize', change,false);
+        change();
+    })();
+
 	var oDiv = document.querySelector('div');
 	var bSys = true;
 	oDiv.onclick = function(){
 		if(bSys){
 			oDiv.style.right='50%';
-			oDiv.style.marginLeft='-100px';
-			oDiv.style.marginTop='-100px';
-			oDiv.style.width='200px';
-			oDiv.style.height='200px';
+			oDiv.style.marginLeft='-5rem';
+			oDiv.style.marginTop='-5rem';
+			oDiv.style.width='10rem';
+			oDiv.style.height='10rem';
 		}else{
 			oDiv.style.right=0;
 			oDiv.style.marginLeft=0;
-			oDiv.style.marginTop='-50px';
-			oDiv.style.width='100px';
-			oDiv.style.height='100px';
+			oDiv.style.marginTop='-2.5rem';
+			oDiv.style.width='5rem';
+			oDiv.style.height='5rem';
 		}
 		bSys=!bSys;
 	}
 	oDiv.addEventListener('touchstart',function(){
 		if(bSys){
 			oDiv.style.right='50%';
-			oDiv.style.marginLeft='-100px';
-			oDiv.style.marginTop='-100px';
-			oDiv.style.width='200px';
-			oDiv.style.height='200px';
+			oDiv.style.marginLeft='-5rem';
+			oDiv.style.marginTop='-5rem';
+			oDiv.style.width='10rem';
+			oDiv.style.height='10rem';
 		}else{
 			oDiv.style.right=0;
 			oDiv.style.marginLeft=0;
-			oDiv.style.marginTop='-50px';
-			oDiv.style.width='100px';
-			oDiv.style.height='100px';
+			oDiv.style.marginTop='-2.5rem';
+			oDiv.style.width='5rem';
+			oDiv.style.height='5rem';
 		}
 		bSys=!bSys;
 	},false);
