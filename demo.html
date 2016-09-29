@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<title>Document</title>
 	<style>
 		div{
@@ -38,6 +39,22 @@
 		}
 		bSys=!bSys;
 	}
+	oDiv.addEventListener('touchstart',function(){
+		if(bSys){
+			oDiv.style.right='50%';
+			oDiv.style.marginLeft='-100px';
+			oDiv.style.marginTop='-100px';
+			oDiv.style.width='200px';
+			oDiv.style.height='200px';
+		}else{
+			oDiv.style.right=0;
+			oDiv.style.marginLeft=0;
+			oDiv.style.marginTop='-50px';
+			oDiv.style.width='100px';
+			oDiv.style.height='100px';
+		}
+		bSys=!bSys;
+	},false);
 	</script>
 </body>
 </html>
